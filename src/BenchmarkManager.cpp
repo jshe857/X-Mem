@@ -626,7 +626,8 @@ bool BenchmarkManager::buildBenchmarks() {
                                                                                 chunk,
                                                                                 stride,
                                                                                 dram_power_readers_,
-                                                                                benchmark_name));
+                                                                                benchmark_name,
+                                                                                config_.getMLP()));
                                 if (lat_benchmarks_[lat_benchmarks_.size()-1] == NULL) {
                                     std::cerr << "ERROR: Failed to build a LatencyBenchmark!" << std::endl;
                                     return false;
@@ -685,7 +686,8 @@ bool BenchmarkManager::buildBenchmarks() {
                                                                             chunk,
                                                                             0,
                                                                             dram_power_readers_,
-                                                                            benchmark_name));
+                                                                            benchmark_name,
+                                                                            config_.getMLP()));
                             if (lat_benchmarks_[lat_benchmarks_.size()-1] == NULL) {
                                 std::cerr << "ERROR: Failed to build a LatencyBenchmark!" << std::endl;
                                 return false;
@@ -757,7 +759,8 @@ bool BenchmarkManager::runExtDelayInjectedLoadedLatencyBenchmark() {
                                                                              chunk,
                                                                              dram_power_readers_,
                                                                              benchmark_name,
-                                                                             d));
+                                                                             d,
+                                                                             config_.getMLP()));
                     if (del_lat_benchmarks[del_lat_benchmarks.size()-1] == NULL) {
                         std::cerr << "ERROR: Failed to build a DelayInjectedLoadedLatencyBenchmark!" << std::endl;
                         return false;

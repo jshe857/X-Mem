@@ -64,7 +64,8 @@ DelayInjectedLoadedLatencyBenchmark::DelayInjectedLoadedLatencyBenchmark(
         chunk_size_t chunk_size,
         std::vector<PowerReader*> dram_power_readers,
         std::string name,
-        uint32_t delay
+        uint32_t delay,
+        uint32_t mlp
     ) :
         LatencyBenchmark(
             mem_array,
@@ -78,7 +79,8 @@ DelayInjectedLoadedLatencyBenchmark::DelayInjectedLoadedLatencyBenchmark(
             chunk_size,
             1,
             dram_power_readers,
-            name
+            name,
+            mlp
         ),
         delay_(delay)
     { 

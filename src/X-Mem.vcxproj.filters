@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Benchmark.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BenchmarkManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="benchmark_kernels.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Configurator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LatencyBenchmark.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LatencyWorker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadWorker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryWorker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PowerReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Runnable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Thread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ThroughputBenchmark.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\delayinjectedloadedlatencybenchmark\DelayInjectedLoadedLatencyBenchmark.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\delayinjectedloadedlatencybenchmark\delay_injected_benchmark_kernels.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="win\WindowsDRAMPowerReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="win\win_common_third_party.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwSequentialLoop_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwSequentialLoop_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwStride16Loop_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwStride16Loop_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwStride2Loop_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwStride2Loop_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwStride4Loop_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwStride4Loop_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwStride8Loop_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwStride8Loop_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revSequentialLoop_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revSequentialLoop_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revStride16Loop_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revStride16Loop_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revStride2Loop_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revStride2Loop_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revStride4Loop_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revStride4Loop_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revStride8Loop_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revStride8Loop_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwSequentialRead_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwSequentialRead_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwSequentialWrite_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwSequentialWrite_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwStride16Read_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwStride16Read_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwStride16Write_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwStride16Write_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwStride2Read_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwStride2Read_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwStride2Write_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwStride2Write_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwStride4Read_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwStride4Read_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwStride4Write_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwStride4Write_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwStride8Read_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwStride8Read_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwStride8Write_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_forwStride8Write_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revSequentialRead_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revSequentialRead_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revSequentialWrite_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revSequentialWrite_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revStride16Read_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revStride16Read_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revStride16Write_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revStride16Write_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revStride2Read_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revStride2Read_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revStride2Write_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revStride2Write_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revStride4Read_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revStride4Read_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revStride4Write_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revStride4Write_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revStride8Read_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revStride8Read_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revStride8Write_Word128.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="win\x86_64\win_x86_64_asm_revStride8Write_Word256.asm">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Benchmark.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BenchmarkManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\benchmark_kernels.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Configurator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ExampleArg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LatencyBenchmark.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LatencyWorker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LoadWorker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MemoryWorker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyArg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\optionparser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PowerReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Runnable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Thread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ThroughputBenchmark.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ext\delayinjectedloadedlatencybenchmark\DelayInjectedLoadedLatencyBenchmark.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ext\delayinjectedloadedlatencybenchmark\delay_injected_benchmark_kernels.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\win\WindowsDRAMPowerReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\win\win_common_third_party.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\win\win_CPdhQuery.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

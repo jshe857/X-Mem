@@ -248,6 +248,7 @@ namespace xmem {
 #define DEFAULT_LARGE_PAGE_SIZE 2*MB /**< Default platform large page size in bytes. This generally should not be relied on, but is a failsafe. */
 #define DEFAULT_WORKING_SET_SIZE_PER_THREAD DEFAULT_PAGE_SIZE /**< Default working set size in bytes. */
 #define DEFAULT_NUM_WORKER_THREADS 1 /**< Default number of worker threads to use. */
+#define DEFAULT_MLP 1
 #define DEFAULT_NUM_NODES 0 /**< Default number of NUMA nodes. */
 #define DEFAULT_NUM_PHYSICAL_PACKAGES 0 /**< Default number of physical packages. */
 #define DEFAULT_NUM_PHYSICAL_CPUS 0 /**< Default number of physical CPU cores. */

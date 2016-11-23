@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AFBD2CB5-8229-4B98-866A-3F5FEE5A182A}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Benchmark.cpp" />
+    <ClCompile Include="BenchmarkManager.cpp" />
+    <ClCompile Include="benchmark_kernels.cpp" />
+    <ClCompile Include="common.cpp" />
+    <ClCompile Include="Configurator.cpp" />
+    <ClCompile Include="ext\delayinjectedloadedlatencybenchmark\DelayInjectedLoadedLatencyBenchmark.cpp" />
+    <ClCompile Include="ext\delayinjectedloadedlatencybenchmark\delay_injected_benchmark_kernels.cpp" />
+    <ClCompile Include="LatencyBenchmark.cpp" />
+    <ClCompile Include="LatencyWorker.cpp" />
+    <ClCompile Include="LoadWorker.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MemoryWorker.cpp" />
+    <ClCompile Include="PowerReader.cpp" />
+    <ClCompile Include="Runnable.cpp" />
+    <ClCompile Include="Thread.cpp" />
+    <ClCompile Include="ThroughputBenchmark.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="win\WindowsDRAMPowerReader.cpp" />
+    <ClCompile Include="win\win_common_third_party.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwSequentialLoop_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwSequentialLoop_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwStride16Loop_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwStride16Loop_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwStride2Loop_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwStride2Loop_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwStride4Loop_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwStride4Loop_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwStride8Loop_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_forwStride8Loop_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revSequentialLoop_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revSequentialLoop_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revStride16Loop_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revStride16Loop_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revStride2Loop_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revStride2Loop_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revStride4Loop_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revStride4Loop_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revStride8Loop_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_dummy_revStride8Loop_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwSequentialRead_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwSequentialRead_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwSequentialWrite_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwSequentialWrite_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwStride16Read_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwStride16Read_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwStride16Write_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwStride16Write_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwStride2Read_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwStride2Read_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwStride2Write_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwStride2Write_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwStride4Read_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwStride4Read_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwStride4Write_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwStride4Write_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwStride8Read_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwStride8Read_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwStride8Write_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_forwStride8Write_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revSequentialRead_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revSequentialRead_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revSequentialWrite_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revSequentialWrite_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revStride16Read_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revStride16Read_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revStride16Write_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revStride16Write_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revStride2Read_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revStride2Read_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revStride2Write_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revStride2Write_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revStride4Read_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revStride4Read_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revStride4Write_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revStride4Write_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revStride8Read_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revStride8Read_Word256.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revStride8Write_Word128.asm" />
+    <None Include="win\x86_64\win_x86_64_asm_revStride8Write_Word256.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Benchmark.h" />
+    <ClInclude Include="include\BenchmarkManager.h" />
+    <ClInclude Include="include\benchmark_kernels.h" />
+    <ClInclude Include="include\common.h" />
+    <ClInclude Include="include\Configurator.h" />
+    <ClInclude Include="include\ExampleArg.h" />
+    <ClInclude Include="include\ext\delayinjectedloadedlatencybenchmark\DelayInjectedLoadedLatencyBenchmark.h" />
+    <ClInclude Include="include\ext\delayinjectedloadedlatencybenchmark\delay_injected_benchmark_kernels.h" />
+    <ClInclude Include="include\LatencyBenchmark.h" />
+    <ClInclude Include="include\LatencyWorker.h" />
+    <ClInclude Include="include\LoadWorker.h" />
+    <ClInclude Include="include\MemoryWorker.h" />
+    <ClInclude Include="include\MyArg.h" />
+    <ClInclude Include="include\optionparser.h" />
+    <ClInclude Include="include\PowerReader.h" />
+    <ClInclude Include="include\Runnable.h" />
+    <ClInclude Include="include\Thread.h" />
+    <ClInclude Include="include\ThroughputBenchmark.h" />
+    <ClInclude Include="include\Timer.h" />
+    <ClInclude Include="include\win\WindowsDRAMPowerReader.h" />
+    <ClInclude Include="include\win\win_common_third_party.h" />
+    <ClInclude Include="include\win\win_CPdhQuery.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

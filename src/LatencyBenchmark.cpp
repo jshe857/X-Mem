@@ -62,7 +62,8 @@ LatencyBenchmark::LatencyBenchmark(
         chunk_size_t chunk_size,
         int32_t stride_size,
         std::vector<PowerReader*> dram_power_readers,
-        std::string name
+        std::string name,
+        uint32_t mlp
     ) :
         Benchmark(
             mem_array,
@@ -80,7 +81,8 @@ LatencyBenchmark::LatencyBenchmark(
             name
         ),
         load_metric_on_iter_(),
-        mean_load_metric_(0)
+        mean_load_metric_(0),
+        mlp_(mlp)
     { 
 
     for (uint32_t i = 0; i < iterations_; i++) 
@@ -162,6 +164,9 @@ void LatencyBenchmark::reportBenchmarkInfo() const {
 
         std::cout << "Load number of worker threads: " << num_worker_threads_-1;
         std::cout << std::endl;
+
+        std::cout << "Memory Level Parallelism: " << mlp_;
+        std::cout << std::endl;
     }
 
     std::cout << std::endl;
@@ -169,6 +174,8 @@ void LatencyBenchmark::reportBenchmarkInfo() const {
 
 
 void LatencyBenchmark::reportResults() const {
+    std::cout << "Memory Level Parallelism: " << mlp_;
+    std::cout << std::endl;
     std::cout << std::endl;
     std::cout << "*** RESULTS";
     std::cout << "***" << std::endl;

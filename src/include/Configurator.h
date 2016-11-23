@@ -68,7 +68,8 @@ namespace xmem {
         MEMORY_NUMA_NODE_AFFINITY,
         USE_READS,
         USE_WRITES,
-        STRIDE_SIZE
+        STRIDE_SIZE,
+		MLP
     };
 
     /**
@@ -77,6 +78,7 @@ namespace xmem {
     const Descriptor usage[] = {
         { UNKNOWN, 0, "", "", Arg::None, "\nUSAGE: xmem [options]\n\n"
         "Options:" },
+		{ MLP, 0, "M", "MLP", MyArg::PositiveInteger, "\tSet Memory Level Parallelism"},
         { ALL, 0, "a", "all", Arg::None, "    -a, --all    \tRun all possible benchmark modes and settings supported by X-Mem. This will override any other relevant user inputs. Note that X-Mem may run for a long time. This does not run extension modes and does not specify the large page option." },
         { CHUNK_SIZE, 0, "c", "chunk_size", MyArg::PositiveInteger, "    -c, --chunk_size    \tA chunk size in bits to use for load traffic-generating threads used in throughput and loaded latency benchmarks. A chunk is the size of each memory access in a benchmark. Allowed values: 32 64 128 256 and 512 (platform dependent). Note that some chunk sizes may not be supported on all hardware. 32-bit chunks are not compatible with random-access patterns on 64-bit machines; these combinations of settings will be skipped if they occur. DEFAULT: 64 on 64-bit systems, 32 on 32-bit systems."},
         { EXTENSION, 0, "e", "extension", MyArg::NonnegativeInteger, "    -e, --extension    \tRun an X-Mem extension defined by the user at build time. The integer argument specifies a single unique extension. This option may be included multiple times. Note that the extension behavior may or may not depend on the other X-Mem options as its semantics are defined by the extension author." },
@@ -387,6 +389,8 @@ namespace xmem {
          */
         bool useStrideN16() const { return use_stride_n16_; }
 
+        uint32_t getMLP() const { return mlp; }
+
     private:
         /**
          * @brief Inspects a command line option (switch) to see if it occurred more than once, and warns the user if this is the case. The program only uses the first occurrence of any switch.
@@ -445,6 +449,7 @@ namespace xmem {
         bool use_stride_n8_; /**< If true, use a stride of -8 in relevant benchmarks. */
         bool use_stride_p16_; /**< If true, use a stride of +16 in relevant benchmarks. */
         bool use_stride_n16_; /**< If true, use a stride of -16 in relevant benchmarks. */
+        uint32_t mlp;
     };
 };
 

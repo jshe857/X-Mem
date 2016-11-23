@@ -63,7 +63,8 @@ namespace xmem {
             chunk_size_t chunk_size,
             int32_t stride_size,
             std::vector<PowerReader*> dram_power_readers,
-            std::string name
+            std::string name,
+            uint32_t mlp
         );
         
         /**
@@ -96,6 +97,8 @@ namespace xmem {
 
     protected:
         virtual bool runCore();
+
+        uint32_t mlp_;
         
         std::vector<double> load_metric_on_iter_; /**< Load metrics for each iteration of the benchmark. This is in MB/s. */
         double mean_load_metric_; /**< The average load throughput in MB/sec that was imposed on the latency measurement. */   

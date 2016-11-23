@@ -57,6 +57,7 @@ Configurator::Configurator(
     run_throughput_(true),
     working_set_size_per_thread_(DEFAULT_WORKING_SET_SIZE_PER_THREAD),
     num_worker_threads_(DEFAULT_NUM_WORKER_THREADS),
+    mlp(DEFAULT_MLP),
 #ifdef HAS_WORD_64
     use_chunk_32b_(false),
     use_chunk_64b_(true),
@@ -135,7 +136,8 @@ int32_t Configurator::configureFromInput(int argc, char* argv[]) {
         std::cerr << "ERROR: Unknown option: " << std::string(unknown_opt->name, unknown_opt->namelen) << std::endl;
         goto error;
     }
-    
+
+
     //Verbosity
     if (options[VERBOSE]) {
         verbose_ = true; //What the user configuration is.
@@ -148,7 +150,7 @@ int32_t Configurator::configureFromInput(int argc, char* argv[]) {
         run_throughput_ = false;
         run_extensions_ = false;
     }
-    
+
     if (options[MEAS_LATENCY])
         run_latency_ = true;
 
@@ -234,7 +236,7 @@ int32_t Configurator::configureFromInput(int argc, char* argv[]) {
         memory_numa_node_affinities_.push_back(0);
 #endif
     }
-  
+
     if (options[CPU_NUMA_NODE_AFFINITY]) {
         if (!numa_enabled_)
             std::cerr << "WARNING: NUMA is disabled, so you cannot specify CPU NUMA node affinity directly. Overriding to only use node 0 for CPU affinity." << std::endl;
@@ -328,7 +330,22 @@ int32_t Configurator::configureFromInput(int argc, char* argv[]) {
             goto error;
         }
     }
-    
+
+
+
+    if (options[MLP]) {
+        if (!check_single_option_occurrence(&options[MLP]))
+            goto error;
+
+        char* endptr = NULL;
+        mlp = static_cast<uint32_t>(strtoul(options[MLP].arg, &endptr, 10));
+
+        if (mlp != 1 && mlp != 2 && mlp != 4 && mlp !=6 && mlp != 8 && mlp != 16 && mlp != 32) {
+            std::cerr << " ERROR: MLP argument must be 1, 2, 4, 6, 8, 16 or 32 ";
+            goto error;
+        }
+    }
+
     //Check chunk sizes
     if (options[CHUNK_SIZE]) {
         //Init... override default values
@@ -662,6 +679,9 @@ int32_t Configurator::configureFromInput(int argc, char* argv[]) {
         std::cout << std::endl;
         std::cout << "---> Number of worker threads:        ";
         std::cout << num_worker_threads_ << std::endl;
+        std::cout << "---> Memory Level Parallelism:        ";
+        std::cout << mlp << std::endl;
+
         std::cout << "---> NUMA enabled:                    ";
 #ifdef HAS_NUMA
         if (numa_enabled_)
