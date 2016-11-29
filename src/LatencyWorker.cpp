@@ -123,7 +123,8 @@ void LatencyWorker::run() {
 
     //Run benchmark
     //Run actual version of function and loop overhead
-    next_address = static_cast<uintptr_t*>(mem_array); 
+    next_address = static_cast<uintptr_t*>(mem_array);
+    std::cerr << "memory array len: " << len << std::endl;
     while (elapsed_ticks < target_ticks) {
         start_tick = start_timer();
         UNROLL256((*kernel_fptr)(next_address, &next_address, len);)
