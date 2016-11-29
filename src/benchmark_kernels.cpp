@@ -734,6 +734,7 @@ bool xmem::determine_sequential_kernel(rw_mode_t rw_mode, chunk_size_t chunk_siz
 }
     
 bool xmem::determine_random_kernel(rw_mode_t rw_mode, chunk_size_t chunk_size, RandomFunction* kernel_function, RandomFunction* dummy_kernel_function) {
+
     switch (rw_mode) {
         case READ:
             switch (chunk_size) {
@@ -992,10 +993,177 @@ int32_t xmem::dummy_chasePointers(uintptr_t*, uintptr_t**, size_t len) {
 
 int32_t xmem::chasePointers(uintptr_t* first_address, uintptr_t** last_touched_address, size_t len) {
     volatile uintptr_t* p = first_address;
-    UNROLL512(p = reinterpret_cast<uintptr_t*>(*p);)
+    UNROLL1024(p = reinterpret_cast<uintptr_t*>(*p);)
     *last_touched_address = const_cast<uintptr_t*>(p);
     return 0;
 }
+
+
+int32_t xmem::chasePointersMLP2(uintptr_t* first_address, uintptr_t** last_touched_address, size_t len) {
+    volatile uintptr_t* p = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p2 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    UNROLL1024(
+            p = reinterpret_cast<uintptr_t*>(*p);
+            p2 = reinterpret_cast<uintptr_t*>(*p2);
+    )
+//    *last_touched_address = const_cast<uintptr_t*>(p);
+    return 0;
+}
+
+int32_t xmem::chasePointersMLP4(uintptr_t* first_address, uintptr_t** last_touched_address, size_t len) {
+    volatile uintptr_t* p = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p2 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p3 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p4 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    UNROLL1024(
+            p = reinterpret_cast<uintptr_t*>(*p);
+            p2 = reinterpret_cast<uintptr_t*>(*p2);
+            p3 = reinterpret_cast<uintptr_t*>(*p3);
+            p4 = reinterpret_cast<uintptr_t*>(*p4);
+    )
+    //*last_touched_address = const_cast<uintptr_t*>(p);
+    return 0;
+}
+
+
+
+int32_t xmem::chasePointersMLP8(uintptr_t* first_address, uintptr_t** last_touched_address, size_t len) {
+    volatile uintptr_t* p = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p2 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p3 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p4 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p5 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p6 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p7 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p8 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+
+    UNROLL1024(
+            p = reinterpret_cast<uintptr_t*>(*p);
+    p2 = reinterpret_cast<uintptr_t*>(*p2);
+    p3 = reinterpret_cast<uintptr_t*>(*p3);
+    p4 = reinterpret_cast<uintptr_t*>(*p4);
+    p5 = reinterpret_cast<uintptr_t*>(*p5);
+    p6 = reinterpret_cast<uintptr_t*>(*p6);
+    p7 = reinterpret_cast<uintptr_t*>(*p7);
+    p8 = reinterpret_cast<uintptr_t*>(*p8);
+    )
+    //*last_touched_address = const_cast<uintptr_t*>(p);
+    return 0;
+}
+
+int32_t xmem::chasePointersMLP16(uintptr_t* first_address, uintptr_t** last_touched_address, size_t len) {
+    volatile uintptr_t* p = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p2 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p3 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p4 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p5 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p6 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p7 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p8 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+
+    volatile uintptr_t* p9 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p10 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p11 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p12 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p13 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p14 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p15 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p16 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+
+    UNROLL1024(
+            p = reinterpret_cast<uintptr_t*>(*p);
+    p2 = reinterpret_cast<uintptr_t*>(*p2);
+    p3 = reinterpret_cast<uintptr_t*>(*p3);
+    p4 = reinterpret_cast<uintptr_t*>(*p4);
+    p5 = reinterpret_cast<uintptr_t*>(*p5);
+    p6 = reinterpret_cast<uintptr_t*>(*p6);
+    p7 = reinterpret_cast<uintptr_t*>(*p7);
+    p8 = reinterpret_cast<uintptr_t*>(*p8);
+    p9 = reinterpret_cast<uintptr_t*>(*p9);
+    p10 = reinterpret_cast<uintptr_t*>(*p10);
+    p11 = reinterpret_cast<uintptr_t*>(*p11);
+    p12 = reinterpret_cast<uintptr_t*>(*p12);
+    p13 = reinterpret_cast<uintptr_t*>(*p13);
+    p14 = reinterpret_cast<uintptr_t*>(*p14);
+    p15 = reinterpret_cast<uintptr_t*>(*p15);
+    p16 = reinterpret_cast<uintptr_t*>(*p16);
+    )
+    //*last_touched_address = const_cast<uintptr_t*>(p);
+    return 0;
+}
+
+int32_t xmem::chasePointersMLP32(uintptr_t* first_address, uintptr_t** last_touched_address, size_t len) {
+    volatile uintptr_t* p = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p2 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p3 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p4 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p5 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p6 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p7 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p8 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p9 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p10 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p11 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p12 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p13 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p14 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p15 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p16 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p17 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p18 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p19 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p20 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p21 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p22 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p23 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p24 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p25 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p26 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p27 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p28 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p29 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p30 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p31 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+    volatile uintptr_t* p32 = first_address + (rand() % (len/ sizeof(uintptr_t)));
+
+    UNROLL1024(
+            p = reinterpret_cast<uintptr_t*>(*p);
+    p2 = reinterpret_cast<uintptr_t*>(*p2);
+    p3 = reinterpret_cast<uintptr_t*>(*p3);
+    p4 = reinterpret_cast<uintptr_t*>(*p4);
+    p5 = reinterpret_cast<uintptr_t*>(*p5);
+    p6 = reinterpret_cast<uintptr_t*>(*p6);
+    p7 = reinterpret_cast<uintptr_t*>(*p7);
+    p8 = reinterpret_cast<uintptr_t*>(*p8);
+    p9 = reinterpret_cast<uintptr_t*>(*p9);
+    p10 = reinterpret_cast<uintptr_t*>(*p10);
+    p11 = reinterpret_cast<uintptr_t*>(*p11);
+    p12 = reinterpret_cast<uintptr_t*>(*p12);
+    p13 = reinterpret_cast<uintptr_t*>(*p13);
+    p14 = reinterpret_cast<uintptr_t*>(*p14);
+    p15 = reinterpret_cast<uintptr_t*>(*p15);
+    p16 = reinterpret_cast<uintptr_t*>(*p16);
+    p17 = reinterpret_cast<uintptr_t*>(*p);
+    p18 = reinterpret_cast<uintptr_t*>(*p2);
+    p19 = reinterpret_cast<uintptr_t*>(*p3);
+    p20 = reinterpret_cast<uintptr_t*>(*p4);
+    p21 = reinterpret_cast<uintptr_t*>(*p5);
+    p22 = reinterpret_cast<uintptr_t*>(*p6);
+    p23 = reinterpret_cast<uintptr_t*>(*p7);
+    p24 = reinterpret_cast<uintptr_t*>(*p8);
+    p25 = reinterpret_cast<uintptr_t*>(*p9);
+    p26 = reinterpret_cast<uintptr_t*>(*p10);
+    p27 = reinterpret_cast<uintptr_t*>(*p11);
+    p28 = reinterpret_cast<uintptr_t*>(*p12);
+    p29 = reinterpret_cast<uintptr_t*>(*p13);
+    p30 = reinterpret_cast<uintptr_t*>(*p14);
+    p31 = reinterpret_cast<uintptr_t*>(*p15);
+    p32 = reinterpret_cast<uintptr_t*>(*p16);
+    )
+    //*last_touched_address = const_cast<uintptr_t*>(p);
+    return 0;
+}
+
 
 
 /***********************************************************************
@@ -3691,11 +3859,11 @@ int32_t xmem::randomRead_Word32(uintptr_t* first_address, uintptr_t** last_touch
 #ifdef HAS_WORD_64
 int32_t xmem::randomRead_Word64(uintptr_t* first_address, uintptr_t** last_touched_address, size_t len) {
     volatile uintptr_t* p = first_address;
-
     UNROLL512(p = reinterpret_cast<uintptr_t*>(*p);)
     *last_touched_address = const_cast<uintptr_t*>(p);
     return 0;
 }
+
 #endif
 
 #ifdef HAS_WORD_128

@@ -102,7 +102,13 @@ namespace xmem {
      * @returns Undefined.
      */
     int32_t chasePointers(uintptr_t* first_address, uintptr_t** last_touched_address, size_t len);
-    
+
+    int32_t chasePointersMLP2(uintptr_t* first_address, uintptr_t** last_touched_address, size_t len);
+    int32_t chasePointersMLP4(uintptr_t* first_address, uintptr_t** last_touched_address, size_t len);
+    int32_t chasePointersMLP8(uintptr_t* first_address, uintptr_t** last_touched_address, size_t len);
+    int32_t chasePointersMLP16(uintptr_t* first_address, uintptr_t** last_touched_address, size_t len);
+    int32_t chasePointersMLP32(uintptr_t* first_address, uintptr_t** last_touched_address, size_t len);
+
     
     
     /***********************************************************************

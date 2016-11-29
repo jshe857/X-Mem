@@ -271,7 +271,29 @@ bool LatencyBenchmark::runCore() {
     size_t len_per_thread = len_ / num_worker_threads_; //Carve up memory space so each worker has its own area to play in
 
     //Set up latency measurement kernel function pointers
-    RandomFunction lat_kernel_fptr = &chasePointers;
+
+
+    RandomFunction lat_kernel_fptr;
+    switch (mlp_) {
+        case 32:
+            lat_kernel_fptr = &chasePointersMLP32;
+            break;
+        case 16:
+            lat_kernel_fptr = &chasePointersMLP16;
+            break;
+        case 8:
+            lat_kernel_fptr = &chasePointersMLP8;
+            break;
+        case 4:
+            lat_kernel_fptr = &chasePointersMLP4;
+            break;
+        case 2:
+            lat_kernel_fptr = &chasePointersMLP2;
+            break;
+        default:
+            lat_kernel_fptr = &chasePointers;
+            break;
+    }
     RandomFunction lat_kernel_dummy_fptr = &dummy_chasePointers;
 
     //Initialize memory regions for all threads by writing to them, causing the memory to be physically resident.
@@ -390,8 +412,8 @@ bool LatencyBenchmark::runCore() {
 
         //Compute latency metric
         uint32_t lat_passes = workers[0]->getPasses();  
-        tick_t lat_adjusted_ticks = workers[0]->getAdjustedTicks();
         tick_t lat_elapsed_dummy_ticks = workers[0]->getElapsedDummyTicks();
+        tick_t lat_adjusted_ticks = workers[0]->getElapsedTicks()/mlp_ - lat_elapsed_dummy_ticks;
         uint32_t lat_bytes_per_pass = workers[0]->getBytesPerPass();
         uint32_t lat_accesses_per_pass = lat_bytes_per_pass / 8;
         iterwarning |= workers[0]->hadWarning();
@@ -481,7 +503,7 @@ bool LatencyBenchmark::runCore() {
         std::cerr << "WARNING: Failed to stop power measurement threads." << std::endl;
     } else if (g_verbose)
         std::cout << "done" << std::endl;
-    
+
     //Run metadata
     has_run_ = true;
     computeMetrics();
