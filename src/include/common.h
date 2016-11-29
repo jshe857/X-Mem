@@ -279,7 +279,7 @@ namespace xmem {
 #define UNROLL32768(x) UNROLL16384(x) UNROLL16384(x)
 #define UNROLL65536(x) UNROLL32768(x) UNROLL32768(x)
 
-#define LATENCY_BENCHMARK_UNROLL_LENGTH 512 /**< Number of unrolls in the latency benchmark pointer chasing core function. */
+#define LATENCY_BENCHMARK_UNROLL_LENGTH 1024 /**< Number of unrolls in the latency benchmark pointer chasing core function. */
 
 /***********************************************************************************************************/
 /***********************************************************************************************************/
