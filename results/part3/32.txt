@@ -1,0 +1,38 @@
+------------------------------------------------------------------------------------------
+Extensible Memory Benchmarking Tool (X-Mem) v2.4.2 for Windows on Intel x86-64
+Build date: Tue 11/29/2016  2:50:13.31
+Indicated compiler(s): Microsoft Visual C++ 
+(C) Microsoft Corporation 2015
+Originally authored by Mark Gottscho <mgottscho@ucla.edu>
+------------------------------------------------------------------------------------------
+
+
+Working set per thread:               4096 B == 4 KB == 0 MB (1 pages)
+
+-------- Running Benchmark: Test #1L (Latency) ----------
+CPU NUMA Node: 0
+Memory NUMA Node: 0
+Latency measurement chunk size: 64-bit
+Latency measurement access pattern: random read (pointer-chasing)
+
+Memory Level Parallelism: 32
+
+*** RESULTS***
+
+Iter #   0:    7.624 ns/access @    0.000 MB/s mean self-imposed load
+
+
+Mean: 7.62356 ns/access and 0 MB/s mean imposed load (not necessarily matched)
+Min: 7.62356 ns/access
+25th Percentile: 7.62356 ns/access
+Median: 7.62356 ns/access
+75th Percentile: 7.62356 ns/access
+95th Percentile: 7.62356 ns/access
+99th Percentile: 7.62356 ns/access
+Max: 7.62356 ns/access
+Mode: 7.62356 ns/access
+
+
+Socket 0 DRAM Power Statistics...
+...Mean Power: 0 W
+...Peak Power: 0 W

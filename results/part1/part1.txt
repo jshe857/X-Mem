@@ -1,0 +1,218 @@
+------------------------------------------------------------------------------------------
+Extensible Memory Benchmarking Tool (X-Mem) v2.4.2 for Windows on Intel x86-64
+Build date: Thu 11/10/2016 13:20:01.28
+Indicated compiler(s): Microsoft Visual C++ 
+(C) Microsoft Corporation 2015
+Originally authored by Mark Gottscho <mgottscho@ucla.edu>
+------------------------------------------------------------------------------------------
+
+
+Verbose output enabled!
+Benchmarking modes:
+---> Throughput
+---> Unloaded latency
+
+Benchmark settings:
+---> Random access:                   no
+---> Sequential access:               yes
+---> Use memory reads:                yes
+---> Use memory writes:               yes
+---> Chunk sizes:                     64 
+---> Stride sizes:                    1 
+---> Number of worker threads:        1
+---> NUMA enabled:                    yes
+------> CPU NUMA node affinities:     0 
+------> Memory NUMA node affinities:  0 
+---> Large pages:                     no
+---> Iterations:                      1
+---> Starting test index:             1
+
+Working set per thread:               4096 B == 4 KB == 0 MB (1 pages)
+
+This binary was built for the following OS and architecture capabilities: 
+Win32
+Win64
+ARCH_INTEL
+ARCH_INTEL_X86_64
+ARCH_AMD64
+ARCH_64BIT
+HAS_NUMA
+HAS_LARGE_PAGES
+HAS_WORD_64
+
+This binary was built with the following compile-time options:
+NDEBUG
+USE_OS_TIMER
+USE_QPC_TIMER
+THROUGHPUT_BENCHMARK_BYTES_PER_PASS == 4096
+EXT_DELAY_INJECTED_LOADED_LATENCY_BENCHMARK
+
+
+These are the system type sizes:
+short:                   2
+int:                     4
+long:                    4
+long long:               8
+
+unsigned short:          2
+unsigned:                4
+unsigned long:           4
+unsigned long long:      8
+
+int8_t:                  1
+int16_t:                 2
+int32_t:                 4
+int64_t:                 8
+
+uint8_t:                 1
+uint16_t:                2
+uint32_t:                4
+uint64_t:                8
+
+Word32_t:                4
+Word64_t:                8
+
+void*:                   8
+uintptr_t:               8
+size_t:                  8
+
+Number of NUMA nodes: 1
+Number of physical processor packages: 1
+Number of physical processor cores: 2
+Number of logical processor cores: 4
+Number of processor L1/L2/L3/L4 caches: 4/2/1/0?
+Regular page size: 4096 B
+Large page size: 2097152 B
+
+Testing thread affinities...
+Locking to logical CPU 0...Pass      Unlocking...Pass
+Locking to logical CPU 1...Pass      Unlocking...Pass
+Locking to logical CPU 2...Pass      Unlocking...Pass
+Locking to logical CPU 3...Pass      Unlocking...Pass
+
+Initializing timer...done
+Calculated timer frequency: 2636000 Hz == 2.636 MHz
+Derived timer ns per tick: 379.363
+
+
+Virtual address for memory on NUMA node 0:
+0x00000225B0030000 --- ALIGNED --> 0x00000225B0030000
+
+Generating benchmarks.
+
+
+-------- Running Benchmark: Test #1T (Throughput) ----------
+CPU NUMA Node: 0
+Memory NUMA Node: 0
+Chunk Size: 64-bit
+Access Pattern: forward sequential
+Read/Write Mode: read
+Number of worker threads: 1
+
+Starting power measurement threads...done
+Running benchmark.
+
+Iter 1 had 46889984 passes in total across 1 threads, with 4096 bytes touched per pass:
+...clock ticks in total across 1 threads == 11611062 (adjusted by -1569057)
+...ns in total across 1 threads == 4.4048e+09 (adjusted by -5.95242e+08)
+...sec in total across 1 threads == 4.4048 (adjusted by -0.595242)
+Stopping power measurement threads...done
+
+*** RESULTS***
+
+Iter #   0:    41582.786    MB/s
+
+
+Mean: 41582.8 MB/s
+Min: 41582.8 MB/s
+25th Percentile: 41582.8 MB/s
+Median: 41582.8 MB/s
+75th Percentile: 41582.8 MB/s
+95th Percentile: 41582.8 MB/s
+99th Percentile: 41582.8 MB/s
+Max: 41582.8 MB/s
+Mode: 41582.8 MB/s
+
+
+Socket 0 DRAM Power Statistics...
+...Mean Power: 0 W
+...Peak Power: 0 W
+
+-------- Running Benchmark: Test #2T (Throughput) ----------
+CPU NUMA Node: 0
+Memory NUMA Node: 0
+Chunk Size: 64-bit
+Access Pattern: forward sequential
+Read/Write Mode: write
+Number of worker threads: 1
+
+Starting power measurement threads...done
+Running benchmark.
+
+Iter 1 had 27415552 passes in total across 1 threads, with 4096 bytes touched per pass:
+...clock ticks in total across 1 threads == 12168248 (adjusted by -1012013)
+...ns in total across 1 threads == 4.61618e+09 (adjusted by -3.8392e+08)
+...sec in total across 1 threads == 4.61618 (adjusted by -0.38392)
+Stopping power measurement threads...done
+
+*** RESULTS***
+
+Iter #   0:    23199.273    MB/s
+
+
+Mean: 23199.3 MB/s
+Min: 23199.3 MB/s
+25th Percentile: 23199.3 MB/s
+Median: 23199.3 MB/s
+75th Percentile: 23199.3 MB/s
+95th Percentile: 23199.3 MB/s
+99th Percentile: 23199.3 MB/s
+Max: 23199.3 MB/s
+Mode: 23199.3 MB/s
+
+
+Socket 0 DRAM Power Statistics...
+...Mean Power: 0 W
+...Peak Power: 0 W
+
+Done running throughput benchmarks.
+
+-------- Running Benchmark: Test #1L (Latency) ----------
+CPU NUMA Node: 0
+Memory NUMA Node: 0
+Latency measurement chunk size: 64-bit
+Latency measurement access pattern: random read (pointer-chasing)
+
+Preparing a memory region under test. This might take a while...done
+
+Starting power measurement threads...done
+Running benchmark.
+
+Iter 1 had 7217408 latency measurement passes, with 512 accesses per pass:
+...lat clock ticks == 13141617 (adjusted by -38458)
+...lat ns == 4.98544e+09 (adjusted by -1.45895e+07)
+...lat sec == 4.98544 (adjusted by -0.0145895)
+
+Stopping power measurement threads...done
+
+*** RESULTS***
+
+Iter #   0:    1.349 ns/access @    0.000 MB/s mean self-imposed load
+
+
+Mean: 1.34912 ns/access and 0 MB/s mean imposed load (not necessarily matched)
+Min: 1.34912 ns/access
+25th Percentile: 1.34912 ns/access
+Median: 1.34912 ns/access
+75th Percentile: 1.34912 ns/access
+95th Percentile: 1.34912 ns/access
+99th Percentile: 1.34912 ns/access
+Max: 1.34912 ns/access
+Mode: 1.34912 ns/access
+
+
+Socket 0 DRAM Power Statistics...
+...Mean Power: 0 W
+...Peak Power: 0 W
+
+Done running latency benchmarks.
